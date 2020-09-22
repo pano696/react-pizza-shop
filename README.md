@@ -1,3 +1,11 @@
+## Введение
+
+Это пример приложения магазина пиццы сделанного ня React
+
+Проект тренировочный, в продакшен не выкладывается
+
+Верстка и дизайн взяты с курса https://www.youtube.com/watch?v=bziVFvq8cLQ&list=PL0FGkDGJQjJFMRmP7wZ771m1Nx-m2_qXq
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
