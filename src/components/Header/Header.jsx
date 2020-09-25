@@ -3,7 +3,7 @@ import React from 'react'
 import Button from '../Button/Button'
 import pizzaLogo from './pizza-logo.svg'
 
-export default function Header() {
+const Header = () => {
   return (
     <div className="header">
       <div className="container">
@@ -54,3 +54,5 @@ export default function Header() {
     </div>
   )
 }
+
+export default Header;

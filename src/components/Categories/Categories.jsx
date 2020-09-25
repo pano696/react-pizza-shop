@@ -1,17 +1,19 @@
 import React from "react";
 
-export default function Categories({items, onClickItem, activeCategories}) {
+const Categories = ({items, onClickItem, activeCategories}) => {
 
-  console.log(activeCategories);
+  const onSelectItem = (category) => {
+    onClickItem(category);
+  }
 
   return (
     <div className="categories">
       <ul>
-        <li className={activeCategories == null ? "active" : ""} onClick={() => onClickItem(null)}>Все</li>
+        <li className={activeCategories == null ? "active" : ""} onClick={() => onSelectItem(null)}>Все</li>
         {items.map((item, index) => 
           <li 
             key={`${index}_${item}`} 
-            onClick={() => onClickItem(item)}
+            onClick={() => onSelectItem(item)}
             className={activeCategories == item ? "active" : ""}>
               {item}
           </li>)
@@ -20,3 +22,5 @@ export default function Categories({items, onClickItem, activeCategories}) {
     </div>
   );
 }
+
+export default Categories;
