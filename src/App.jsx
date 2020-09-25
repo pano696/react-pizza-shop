@@ -1,16 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import {Header, Categories} from "./components"
 
-const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"]
+const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
 
 function App() {
+
+  const [activeCatgories, setActiveCategories] = useState(null);
+
   return (
     <div className="wrapper">
       <Header />
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories items={items} />
+            <Categories items={items} onClickItem={(name) => setActiveCategories(name)} activeCategories={activeCatgories}/>
             <div className="sort">
               <div className="sort__label">
                 <svg
