@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import {Header, Categories, Sort} from "./components"
 
-const items = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
+const categories = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
+const sorting = ['популярности', 'цене', 'алфавиту'];
 
 const App = () => {
 
   const [activeCatgories, setActiveCategories] = useState(null);
-  const [isSortPopup, setSortPopup] = useState(false);
 
   return (
     <div className="wrapper">
@@ -14,8 +14,8 @@ const App = () => {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories items={items} onClickItem={(name) => setActiveCategories(name)} activeCategories={activeCatgories}/>
-            <Sort isSortPopup={isSortPopup} setSortPopup={setSortPopup}/>
+            <Categories items={categories} onClickItem={(name) => setActiveCategories(name)} activeCategories={activeCatgories}/>
+            <Sort items={sorting}/>
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
