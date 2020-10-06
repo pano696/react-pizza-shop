@@ -48,6 +48,10 @@
           border-radius: 5px;
           cursor: auto;
         }
+        &.disabled {
+          color: #848383;
+          pointer-events: none;
+        }
       }
     }
   }
