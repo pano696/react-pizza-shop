@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Header} from "./components"
 import {Home, Cart} from "./pages"
 import { Route } from "react-router-dom";
+import Axios from "axios";
 
 
 
@@ -10,9 +11,7 @@ const App = () => {
   const [db, loadDb] = useState([]);
 
   useEffect(() => {
-     fetch("http://localhost:3000/db.json")
-      .then(resp=>resp.json())
-      .then(resp=>loadDb(resp.pizzas));
+    Axios.get("http://localhost:3000/db.json").then(resp=>loadDb(resp.data.pizzas))
   }, [])
 
   return (

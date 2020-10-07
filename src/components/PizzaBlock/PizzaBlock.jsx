@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 function PizzaBlock( {category, imageUrl, name, price, rating, sizes, types} ) {
 
@@ -32,7 +33,7 @@ function PizzaBlock( {category, imageUrl, name, price, rating, sizes, types} ) {
               key={item}
               className={classNames(
                 {
-                  active: activeType==item,
+                  active: activeType === item,
                   disabled: !types.includes(index),
                 })}
               onClick={() => setType(item)}
@@ -45,7 +46,7 @@ function PizzaBlock( {category, imageUrl, name, price, rating, sizes, types} ) {
               key={item}
               className={classNames(
                 {
-                  active: activeSize==item,
+                  active: activeSize === item,
                   disabled: !sizes.includes(item),
                 })}
               onClick={() => setSize(item)}
@@ -74,6 +75,22 @@ function PizzaBlock( {category, imageUrl, name, price, rating, sizes, types} ) {
       </div>
     </div>
   )
+}
+
+PizzaBlock.propTypes = {
+  imageUrl: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  price: propTypes.number.isRequired,
+  sizes:propTypes.arrayOf(propTypes.number).isRequired,
+  types: propTypes.arrayOf(propTypes.number).isRequired,
+}
+
+PizzaBlock.defaultProps = {
+  imageUrl: "",
+  name: "---",
+  price: 0,
+  sizes: [],
+  types: [],
 }
 
 export default PizzaBlock
