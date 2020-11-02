@@ -2,8 +2,8 @@ import React from "react";
 
 const Categories = ({items, onClickItem, activeCategories}) => {
 
-  const onSelectItem = (category) => {
-    onClickItem(category);
+  const onSelectItem = (index) => {
+    onClickItem(index);
   }
 
   return (
@@ -11,11 +11,11 @@ const Categories = ({items, onClickItem, activeCategories}) => {
       <ul>
         <li className={activeCategories == null ? "active" : ""} onClick={() => onSelectItem(null)}>Все</li>
         {items &&
-          items.map((item, index) => 
-            <li 
-              key={`${index}_${item}`} 
-              onClick={() => onSelectItem(item)}
-              className={activeCategories === item ? "active" : ""}>
+          items.map((item, index) =>
+            <li
+              key={`${index}_${item}`}
+              onClick={() => onSelectItem(index)}
+              className={activeCategories === index ? "active" : ""}>
                 {item}
             </li>)
         }
